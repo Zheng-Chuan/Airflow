@@ -1,0 +1,26 @@
+[2022-11-17T22:47:31.470+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-14T00:00:00+00:00 [queued]>
+[2022-11-17T22:47:31.493+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-14T00:00:00+00:00 [queued]>
+[2022-11-17T22:47:31.495+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17T22:47:31.496+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-17T22:47:31.497+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17T22:47:31.525+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2022-11-14 00:00:00+00:00
+[2022-11-17T22:47:31.535+0000] {standard_task_runner.py:55} INFO - Started process 106 to run task
+[2022-11-17T22:47:31.546+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2022-11-14T00:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpsrmfe33r']
+[2022-11-17T22:47:31.559+0000] {standard_task_runner.py:83} INFO - Job 114: Subtask extract_user
+[2022-11-17T22:47:31.690+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2022-11-14T00:00:00+00:00 [running]> on host bca668ad4dbc
+[2022-11-17T22:47:31.793+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-14T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-14T00:00:00+00:00
+[2022-11-17T22:47:31.795+0000] {http.py:121} INFO - Calling HTTP method
+[2022-11-17T22:47:31.809+0000] {base.py:71} INFO - Using connection ID 'user_api' for task execution.
+[2022-11-17T22:47:31.811+0000] {http.py:148} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-11-17T22:47:32.640+0000] {http.py:125} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Elliott","last":"Engedal"},"location":{"street":{"number":9656,"name":"Rimveien"},"city":"Nordvågen","state":"Rogaland","country":"Norway","postcode":"8320","coordinates":{"latitude":"42.1090","longitude":"-99.5615"},"timezone":{"offset":"+5:30","description":"Bombay, Calcutta, Madras, New Delhi"}},"email":"elliott.engedal@example.com","login":{"uuid":"32bfb9a9-8bac-4c88-98d5-ad83c90b5c75","username":"ticklishgoose697","password":"lindsay","salt":"FUMWXFHJ","md5":"4aa46be6a971c96be60e05a0d7b201ec","sha1":"29142c0d0202d708ffa9d5a1d425d223aa83e2e2","sha256":"584452152e9c89c2f9246a316e02d1774a630df5e29d5ebdf0f88492c48fc175"},"dob":{"date":"1991-10-19T20:55:12.108Z","age":31},"registered":{"date":"2013-06-07T03:44:38.462Z","age":9},"phone":"76063743","cell":"90838573","id":{"name":"FN","value":"19109127968"},"picture":{"large":"https://randomuser.me/api/portraits/men/18.jpg","medium":"https://randomuser.me/api/portraits/med/men/18.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/18.jpg"},"nat":"NO"}],"info":{"seed":"365bd543d4b63502","results":1,"page":1,"version":"1.4"}}
+[2022-11-17T22:47:32.676+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, execution_date=20221114T000000, start_date=20221117T224731, end_date=20221117T224732
+[2022-11-17T22:47:32.722+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-11-17T22:47:32.764+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

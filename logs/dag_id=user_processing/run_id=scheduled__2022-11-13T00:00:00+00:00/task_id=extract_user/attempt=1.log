@@ -1,0 +1,26 @@
+[2022-11-14T04:53:36.373+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-13T00:00:00+00:00 [queued]>
+[2022-11-14T04:53:36.633+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-13T00:00:00+00:00 [queued]>
+[2022-11-14T04:53:36.646+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-14T04:53:36.649+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-14T04:53:36.660+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-14T04:53:36.993+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2022-11-13 00:00:00+00:00
+[2022-11-14T04:53:37.085+0000] {standard_task_runner.py:55} INFO - Started process 164 to run task
+[2022-11-14T04:53:37.116+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2022-11-13T00:00:00+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp04vmkp_j']
+[2022-11-14T04:53:37.143+0000] {standard_task_runner.py:83} INFO - Job 97: Subtask extract_user
+[2022-11-14T04:53:37.824+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2022-11-13T00:00:00+00:00 [running]> on host bca668ad4dbc
+[2022-11-14T04:53:38.632+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-13T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-13T00:00:00+00:00
+[2022-11-14T04:53:38.639+0000] {http.py:121} INFO - Calling HTTP method
+[2022-11-14T04:53:38.750+0000] {base.py:71} INFO - Using connection ID 'user_api' for task execution.
+[2022-11-14T04:53:38.771+0000] {http.py:148} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-11-14T04:53:39.749+0000] {http.py:125} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Abdallah","last":"Van Wieringen"},"location":{"street":{"number":3648,"name":"Bruno Walterstraat"},"city":"De Koog","state":"Overijssel","country":"Netherlands","postcode":"9138 DI","coordinates":{"latitude":"30.5136","longitude":"-58.1702"},"timezone":{"offset":"-11:00","description":"Midway Island, Samoa"}},"email":"abdallah.vanwieringen@example.com","login":{"uuid":"0e0532a1-6c7f-49fd-bf1c-9a260295c767","username":"beautifulrabbit607","password":"whocares","salt":"xXD7J92C","md5":"3a284885515c931387152f193afb74f5","sha1":"1c6432a508004f2c4e9e39f55e64f323fd3a08ad","sha256":"20697f1bab9defccab9f064729227cfb1efd0127dc66d25644654550d1c746ee"},"dob":{"date":"1983-01-03T07:56:38.190Z","age":39},"registered":{"date":"2005-01-06T07:48:18.428Z","age":17},"phone":"(001) 6374440","cell":"(06) 66679186","id":{"name":"BSN","value":"76563990"},"picture":{"large":"https://randomuser.me/api/portraits/men/41.jpg","medium":"https://randomuser.me/api/portraits/med/men/41.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/41.jpg"},"nat":"NL"}],"info":{"seed":"ea06609840cfa53a","results":1,"page":1,"version":"1.4"}}
+[2022-11-14T04:53:39.979+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, execution_date=20221113T000000, start_date=20221114T045336, end_date=20221114T045339
+[2022-11-14T04:53:40.150+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-11-14T04:53:40.375+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,34 @@
+[2022-11-09T23:22:27.668+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: producer.update_dataset scheduled__2022-11-08T00:00:00+00:00 [queued]>
+[2022-11-09T23:22:27.692+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: producer.update_dataset scheduled__2022-11-08T00:00:00+00:00 [queued]>
+[2022-11-09T23:22:27.694+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-09T23:22:27.695+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-09T23:22:27.697+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-09T23:22:27.725+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): update_dataset> on 2022-11-08 00:00:00+00:00
+[2022-11-09T23:22:27.734+0000] {standard_task_runner.py:55} INFO - Started process 606 to run task
+[2022-11-09T23:22:27.743+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'producer', 'update_dataset', 'scheduled__2022-11-08T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/producer.py', '--cfg-path', '/tmp/tmp6zc78xz2']
+[2022-11-09T23:22:27.745+0000] {standard_task_runner.py:83} INFO - Job 20: Subtask update_dataset
+[2022-11-09T23:22:27.897+0000] {task_command.py:376} INFO - Running <TaskInstance: producer.update_dataset scheduled__2022-11-08T00:00:00+00:00 [running]> on host 75c039262b8c
+[2022-11-09T23:22:28.056+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=producer
+AIRFLOW_CTX_TASK_ID=update_dataset
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-08T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-08T00:00:00+00:00
+[2022-11-09T23:22:28.060+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 188, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/producer.py", line 17, in update_dataset
+    with open(my_file.uri, "a+") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'tmp/my_file.txt'
+[2022-11-09T23:22:28.087+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=producer, task_id=update_dataset, execution_date=20221108T000000, start_date=20221109T232227, end_date=20221109T232228
+[2022-11-09T23:22:28.112+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 20 for task update_dataset ([Errno 2] No such file or directory: 'tmp/my_file.txt'; 606)
+[2022-11-09T23:22:28.158+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-11-09T23:22:28.214+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

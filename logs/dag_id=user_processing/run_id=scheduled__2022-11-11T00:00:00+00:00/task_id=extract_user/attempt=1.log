@@ -1,0 +1,26 @@
+[2022-11-13T05:53:07.235+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-11T00:00:00+00:00 [queued]>
+[2022-11-13T05:53:07.318+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2022-11-11T00:00:00+00:00 [queued]>
+[2022-11-13T05:53:07.324+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-13T05:53:07.330+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-13T05:53:07.339+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-13T05:53:07.577+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2022-11-11 00:00:00+00:00
+[2022-11-13T05:53:07.662+0000] {standard_task_runner.py:55} INFO - Started process 210 to run task
+[2022-11-13T05:53:07.695+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2022-11-11T00:00:00+00:00', '--job-id', '80', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp119v83vd']
+[2022-11-13T05:53:07.747+0000] {standard_task_runner.py:83} INFO - Job 80: Subtask extract_user
+[2022-11-13T05:53:08.342+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2022-11-11T00:00:00+00:00 [running]> on host bca668ad4dbc
+[2022-11-13T05:53:09.035+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-11T00:00:00+00:00
+[2022-11-13T05:53:09.041+0000] {http.py:121} INFO - Calling HTTP method
+[2022-11-13T05:53:09.160+0000] {base.py:71} INFO - Using connection ID 'user_api' for task execution.
+[2022-11-13T05:53:09.172+0000] {http.py:148} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-11-13T05:53:10.066+0000] {http.py:125} INFO - {"results":[{"gender":"female","name":{"title":"Mrs","first":"Núria","last":"da Costa"},"location":{"street":{"number":2112,"name":"Rua São José "},"city":"Umuarama","state":"Maranhão","country":"Brazil","postcode":96549,"coordinates":{"latitude":"-79.0375","longitude":"32.2619"},"timezone":{"offset":"+3:30","description":"Tehran"}},"email":"nuria.dacosta@example.com","login":{"uuid":"c3993cf5-f344-4cae-918c-9f24ac9b2e5e","username":"smallmeercat969","password":"lincoln","salt":"osrUP7ee","md5":"641170e8c29448cc44d3713a329d510d","sha1":"bed5f5e83539069fccf15204d798543d54981b7d","sha256":"68d88414608dc67987c4f5e56ca885d77213718b87411388cdb3760899f64a37"},"dob":{"date":"1955-01-15T23:55:25.545Z","age":67},"registered":{"date":"2007-12-14T06:07:49.882Z","age":14},"phone":"(76) 6193-9295","cell":"(99) 1364-0350","id":{"name":"CPF","value":"024.833.588-53"},"picture":{"large":"https://randomuser.me/api/portraits/women/64.jpg","medium":"https://randomuser.me/api/portraits/med/women/64.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/64.jpg"},"nat":"BR"}],"info":{"seed":"6b9c048cdcc37c6c","results":1,"page":1,"version":"1.4"}}
+[2022-11-13T05:53:10.277+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, execution_date=20221111T000000, start_date=20221113T055307, end_date=20221113T055310
+[2022-11-13T05:53:10.465+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-11-13T05:53:10.773+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
