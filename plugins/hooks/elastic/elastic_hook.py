@@ -37,6 +37,3 @@ class ElasticHook(BaseHook):
 class AirflowElasticPlugin(AirflowPlugin):
     name = "elastic"
     hooks = [ElasticHook]
-
-
-
